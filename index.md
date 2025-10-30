@@ -1,4 +1,6 @@
 ---
+[Home](./) | [About](./about) | [Blog Posts](/)
+
 layout: default
 title: "Home"
 ---
