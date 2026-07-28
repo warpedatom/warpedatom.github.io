@@ -1,6 +1,8 @@
 title: "VELKRIS"
 description: "Red team tradecraft, malware analysis, and evasion research."
 author: "Velkris"
+github_username: warpedatom
+lang: en
 
 # Production URL (custom domain - canonical for SEO and social cards)
 url: "https://velkris.red"

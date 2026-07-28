@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 description: "Velkris - cybersecurity practitioner and red team operator."
+last_modified_at: 2026-07-27
 ---
 
 # About
@@ -21,5 +22,5 @@ protection.
 This site is where I keep original write-ups on how these techniques and
 mechanisms actually work - grounded in public research, in my own words.
 
-Find me on [GitHub](https://github.com/warpedatom) and
-[X (@warped_atom)](https://x.com/warped_atom).
+Find me on [GitHub](https://github.com/warpedatom){:rel="me"} and
+[X (@warped_atom)](https://x.com/warped_atom){:rel="me"}.

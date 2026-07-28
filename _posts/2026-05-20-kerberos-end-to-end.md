@@ -3,6 +3,8 @@ layout: post
 title: "Kerberos, end to end"
 date: 2026-05-20
 tags: [kerberos, active-directory]
+description: "How Kerberos authentication actually works: the AS-REQ/REP, TGS-REQ/REP, and AP exchanges, and why nearly every Active Directory attack flows from the protocol itself."
+series: kerberos
 ---
 
 Almost every Active Directory attack worth knowing rides on Kerberos, so it pays

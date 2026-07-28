@@ -3,6 +3,8 @@ layout: post
 title: "How Kerberoasting works"
 date: 2026-07-21
 tags: [kerberos, active-directory]
+description: "Kerberoasting (T1558.003) in full detail: why any domain user can request a TGS for an SPN account, how to extract and crack the ticket offline, and what defenders actually need to change."
+series: kerberos
 ---
 
 Kerberoasting (MITRE ATT&CK **T1558.003**) is one of those techniques that

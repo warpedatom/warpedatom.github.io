@@ -26,6 +26,16 @@
   --wrap: 720px;
 }
 
+/* skip-to-content link for keyboard navigation */
+.skip-link {
+  position: absolute; top: -999px; left: 0;
+  background: var(--bg-elev); color: var(--ink-bright);
+  border: 1px solid var(--red); border-radius: 3px;
+  font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em;
+  padding: 0.5rem 1rem; text-decoration: none; z-index: 200;
+}
+.skip-link:focus { top: 4px; left: 4px; }
+
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }
 
@@ -108,6 +118,7 @@ body {
   border-bottom: 1px solid transparent; transition: color 0.15s, border-color 0.15s;
 }
 .nav a:hover { color: var(--ink-bright); border-bottom-color: var(--red-hot); }
+.nav a[aria-current="page"] { color: var(--ink-bright); border-bottom-color: var(--red); }
 
 .tagline {
   margin: 1.3rem 0 0; padding-left: 0.85rem;
@@ -144,6 +155,11 @@ strong { color: var(--ink-bright); font-weight: 600; }
 hr { border: 0; border-top: 1px solid var(--line-lit); margin: 2.6rem 0; }
 
 /* ---- writing list --------------------------------------- */
+.year-heading {
+  font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase;
+  letter-spacing: 0.14em; color: var(--ink-dim);
+  margin: 2rem 0 0.2rem; padding: 0; border: none;
+}
 .post-list { list-style: none; padding: 0; margin: 0.5rem 0; }
 .post-list li {
   display: flex; gap: 1rem; align-items: baseline;
@@ -171,6 +187,28 @@ hr { border: 0; border-top: 1px solid var(--line-lit); margin: 2.6rem 0; }
   font-family: var(--mono); font-size: 0.82rem; color: #9a5b60;
   margin: -0.3rem 0 1.9rem; letter-spacing: 0.03em;
 }
+.read-time { color: var(--ink-dim); }
+
+/* ---- series navigation ---------------------------------- */
+.series-nav {
+  margin: 2.8rem 0 0.5rem;
+  padding: 1rem 1.2rem 1rem;
+  border: 1px solid var(--line-lit); border-left: 3px solid var(--red-deep);
+  background: var(--bg-elev); border-radius: 4px;
+}
+.series-label {
+  display: block; font-family: var(--mono); font-size: 0.76rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-dim); margin-bottom: 0.7rem;
+}
+.series-list {
+  margin: 0; padding-left: 1.4rem;
+  list-style: decimal; font-family: var(--mono); font-size: 0.84rem;
+}
+.series-list li { margin: 0.3rem 0; color: var(--ink-dim); }
+.series-list a { color: var(--ink); border-bottom: none; text-decoration: none; }
+.series-list a:hover { color: var(--red-hot); }
+.series-current span { color: var(--ink-bright); }
 .post-tags { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
 .post-tags a {
   font-family: var(--mono); font-size: 0.74rem; color: var(--ink-dim);
@@ -243,6 +281,29 @@ blockquote {
 .highlight .gi { color: #3fae6b; }                      /* diff insert */
 .highlight .gd { color: #e5555d; }                      /* diff delete */
 .highlight .err { color: #ff5a5a; background: rgba(229,29,42,0.12); }
+
+/* ---- GitHub stats badges -------------------------------- */
+.gh-stats {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin: 0.9rem 0 1.6rem;
+  font-family: var(--mono); font-size: 0.76rem;
+  min-height: 1.4em; /* prevent layout shift while loading */
+}
+.gh-badge {
+  display: inline-flex; align-items: center;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--line-lit); border-radius: 3px;
+  color: var(--ink-dim); background: var(--bg-elev);
+  letter-spacing: 0.03em; white-space: nowrap;
+}
+.gh-badge-rel { color: var(--red-hot); border-color: var(--red-deep); background: rgba(92,11,17,0.18); }
+
+/* ---- focus-visible for keyboard navigation ------------- */
+:focus-visible {
+  outline: 2px solid var(--red-hot);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* ---- responsive ----------------------------------------- */
 @media (max-width: 600px) {

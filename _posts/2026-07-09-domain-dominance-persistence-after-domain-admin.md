@@ -3,6 +3,8 @@ layout: post
 title: "Domain dominance: persistence after Domain Admin"
 date: 2026-07-09
 tags: [active-directory, persistence]
+series: kerberos
+description: "The persistence primitives - DCSync, Golden Tickets, skeleton keys, AdminSDHolder - that let an attacker stay in after reaching Domain Admin and survive a password reset."
 ---
 
 Reaching Domain Admin is a milestone, not the finish line. **Domain dominance**

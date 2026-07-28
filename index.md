@@ -9,13 +9,17 @@ adversary tradecraft.</p>
 
 ## Writing
 
+{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year_group in posts_by_year %}
+<h3 class="year-heading">{{ year_group.name }}</h3>
 <ul class="post-list">
-{% for post in site.posts %}
+{% for post in year_group.items %}
   <li>
     <span class="stamp">{{ post.date | date: "%Y-%m-%d" }}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </li>
-{% else %}
-  <li>No posts yet.</li>
 {% endfor %}
 </ul>
+{% else %}
+<ul class="post-list"><li>No posts yet.</li></ul>
+{% endfor %}
