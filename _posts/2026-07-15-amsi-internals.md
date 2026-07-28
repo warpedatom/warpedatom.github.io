@@ -3,6 +3,7 @@ layout: post
 title: "AMSI internals: where the scan actually happens"
 date: 2026-07-15
 tags: [detection, evasion]
+series: malware-analysis
 description: "How the Antimalware Scan Interface is wired into PowerShell and .NET: where amsi.dll loads, when AmsiScanBuffer is called, and why the boundary is exactly where it is."
 ---
 

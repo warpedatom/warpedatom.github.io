@@ -2,7 +2,7 @@
 layout: post
 title: "Reading entropy to spot packed code"
 date: 2026-07-03
-tags: [malware-analysis]
+tags: [malware-analysis, detection]
 description: "Shannon entropy as a first filter for packed or encrypted payloads: how to compute it, what the numbers mean, and how to use it at scale for malware triage."
 series: malware-analysis
 ---

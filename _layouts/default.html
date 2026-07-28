@@ -13,6 +13,9 @@
   {% feed_meta %}
   <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% if page.url contains '/projects/' %}
+  <link rel="preconnect" href="https://api.github.com">
+  {% endif %}
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
