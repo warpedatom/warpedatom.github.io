@@ -3,6 +3,9 @@ name: CI - Build & Validate
 on:
   pull_request:
     branches: ["main"]
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -24,6 +27,18 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+
+      - name: Ruby dependency audit
+        run: |
+          gem install bundler-audit --no-document
+          bundler-audit check --update
+
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@6f56a7391f4c88179336213e9e0ddf4dd3856ccb # v12
+        with:
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
 
       - name: Check HTML output
         run: |
