@@ -33,5 +33,5 @@ jobs:
             --ignore-status-codes "403,429" \
             --no-enforce-https \
             --allow-missing-href \
-            --check-html \
+            --checks "Links,Images,Scripts,OpenGraph" \
             --disable-external
