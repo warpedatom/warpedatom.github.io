@@ -409,9 +409,8 @@ pre:hover .copy-btn { opacity: 1; }
 }
 .search-input:focus { border-color: var(--red); }
 .search-input::placeholder { color: var(--ink-dim); }
-.search-results { margin-top: 1.5rem; }
-.search-results li { margin: 0.8rem 0; }
-.search-results .search-date { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-dim); }
+  .search-results { margin-top: 1.5rem; }
+  .search-results li { margin: 0.8rem 0; }
 
 /* ---- smooth scroll for anchor links --------------------- */
 html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
