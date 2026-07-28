@@ -412,3 +412,73 @@ pre:hover .copy-btn { opacity: 1; }
 .search-results { margin-top: 1.5rem; }
 .search-results li { margin: 0.8rem 0; }
 .search-results .search-date { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-dim); }
+
+/* ---- smooth scroll for anchor links --------------------- */
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* ---- back-to-top button --------------------------------- */
+.back-to-top {
+  position: fixed; bottom: 1.5rem; right: 1.5rem;
+  width: 2.4rem; height: 2.4rem;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--bg-elev); border: 1px solid var(--line-lit);
+  border-radius: 50%; color: var(--ink-dim);
+  font-size: 1.1rem; text-decoration: none;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+  z-index: 50;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { color: var(--red-hot); border-color: var(--red); box-shadow: 0 0 10px var(--red-glow); }
+
+/* ---- heading anchor links ------------------------------- */
+.heading-anchor {
+  color: var(--red-deep); text-decoration: none; border-bottom: none;
+  margin-left: 0.4rem; font-size: 0.8em;
+  opacity: 0; transition: opacity 0.15s;
+}
+.content h2:hover .heading-anchor,
+.content h3:hover .heading-anchor { opacity: 1; }
+.heading-anchor:hover { color: var(--red-hot); }
+
+/* ---- external link indicator ---------------------------- */
+.content a[target="_blank"]::after {
+  content: "\2197"; /* ↗ */
+  font-size: 0.7em; margin-left: 0.2em;
+  vertical-align: super; color: var(--ink-dim);
+}
+
+/* ---- keyboard shortcut hints ---------------------------- */
+kbd {
+  display: inline-block; padding: 0.1em 0.4em;
+  font-family: var(--mono); font-size: 0.78em;
+  background: var(--bg-elev); border: 1px solid var(--line-lit);
+  border-radius: 3px; color: var(--ink-dim);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+/* ---- print stylesheet ----------------------------------- */
+@media print {
+  .fx-topline, .fx-skull, .fx-grain, .fx-vignette,
+  .skip-link, .back-to-top, .copy-btn,
+  .reading-progress, .site-footer, .post-nav { display: none !important; }
+  body {
+    background: #fff !important; color: #111 !important;
+    font-size: 12pt; line-height: 1.6;
+  }
+  .site-header { border-bottom: 1px solid #ccc; padding: 0.5rem 0; }
+  .brand-mark { display: none; }
+  .brand-name { color: #111 !important; }
+  .nav { display: none; }
+  .tagline { color: #555 !important; border-left-color: #999 !important; }
+  .content { padding: 1rem 0; }
+  .content h1, .content h2, .content h3 { color: #111 !important; }
+  .content h2 { border-left-color: #666 !important; }
+  .content a { color: #111 !important; text-decoration: underline; border-bottom: none; }
+  .content a[target="_blank"]::after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  pre { border-color: #ccc !important; border-left-color: #666 !important; }
+  code { border-color: #ccc !important; background: #f5f5f5 !important; color: #333 !important; }
+  .toc { border-color: #ccc !important; background: #f9f9f9 !important; }
+  .heading-anchor { display: none; }
+}
