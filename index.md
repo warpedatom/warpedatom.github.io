@@ -17,6 +17,7 @@ adversary tradecraft.</p>
   <li>
     <span class="stamp">{{ post.date | date: "%Y-%m-%d" }}</span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="read-time-inline">&middot; {% assign wc = post.content | number_of_words %}{% assign rt = wc | divided_by: 240 %}{% if rt < 1 %}1{% else %}{{ rt }}{% endif %} min</span>
   </li>
 {% endfor %}
 </ul>

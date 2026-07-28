@@ -8,8 +8,19 @@ sitemap: false
 <article class="doc">
   <h1>404</h1>
   <p class="lead">Signal lost. That page isn't here.</p>
-  <p>It may have moved, or it never existed. Head back to
+  <p>It may have moved, or it never existed. Try
+  <a href="{{ '/search/' | relative_url }}">searching</a>, head back to
   <a href="{{ '/' | relative_url }}">the index</a>, or browse the
   <a href="{{ '/projects/' | relative_url }}">projects</a>.</p>
+
+  <h2>Recent posts</h2>
+  <ul class="post-list">
+  {% for post in site.posts limit:5 %}
+    <li>
+      <span class="stamp">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
 </article>
 <p class="backlink"><a href="{{ '/' | relative_url }}">&larr; return to base</a></p>

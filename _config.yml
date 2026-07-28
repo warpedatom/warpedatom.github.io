@@ -15,8 +15,14 @@ twitter:
 
 # Build
 markdown: kramdown
+kramdown:
+  auto_ids: true
+  toc_levels: "2..3"
 highlighter: rouge
 permalink: /posts/:year/:month/:day/:title/
+
+# Drafts - run `jekyll serve --drafts` to preview locally
+# Create draft posts in _drafts/ folder (no date prefix needed)
 
 plugins:
   - jekyll-feed
