@@ -43,7 +43,7 @@ self.addEventListener('fetch', function(event) {
   // Only cache GET requests
   if (request.method !== 'GET') return;
 
-  // Skip cross-origin requests except GitHub API (already cached client-side)
+  // Skip cross-origin requests
   if (!request.url.startsWith(self.location.origin)) return;
 
   var isPage = request.headers.get('accept') &&
