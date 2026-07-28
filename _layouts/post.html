@@ -111,8 +111,12 @@ layout: default
     btn.addEventListener('click', function(){
       var code = pre.querySelector('code');
       var text = code ? code.textContent : pre.textContent;
+      if (!navigator.clipboard || !navigator.clipboard.writeText) return;
       navigator.clipboard.writeText(text).then(function(){
         btn.textContent = 'Copied!';
+        setTimeout(function(){ btn.textContent = 'Copy'; }, 1800);
+      }).catch(function(){
+        btn.textContent = 'Failed';
         setTimeout(function(){ btn.textContent = 'Copy'; }, 1800);
       });
     });
