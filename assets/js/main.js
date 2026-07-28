@@ -2,7 +2,7 @@
 (function () {
   var body = document.body || document.documentElement;
   var swUrl = body.getAttribute('data-sw-url') || '/sw.js';
-  var searchUrl = body.getAttribute('data-search-url') || '/search/';
+  var searchUrl = '/search/';
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register(swUrl).catch(function () {});
