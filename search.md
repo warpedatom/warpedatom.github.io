@@ -45,8 +45,15 @@ sitemap: false
 
     matches.forEach(function(p){
       var li = document.createElement('li');
-      li.innerHTML = '<span class="stamp">' + p.date + '</span> ' +
-                     '<a href="' + p.url + '">' + p.title + '</a>';
+      var stamp = document.createElement('span');
+      stamp.className = 'stamp';
+      stamp.textContent = p.date;
+      var link = document.createElement('a');
+      link.href = p.url;
+      link.textContent = p.title;
+      li.appendChild(stamp);
+      li.appendChild(document.createTextNode(' '));
+      li.appendChild(link);
       results.appendChild(li);
     });
   });
