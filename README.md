@@ -40,7 +40,7 @@ and publishes to GitHub Pages. Source: **Settings → Pages → GitHub Actions**
 
 PR CI (`.github/workflows/ci.yml`) now also runs:
 - Ruby dependency audit (`bundler-audit`)
-- Lighthouse assertions (performance, accessibility, best-practices, SEO)
+- Lighthouse assertions (performance, accessibility, best practices, SEO)
 - HTML output checks via `html-proofer`
 
 ## Structure
