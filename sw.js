@@ -53,8 +53,12 @@ self.addEventListener('fetch', function(event) {
     // Network-first for pages
     event.respondWith(
       fetch(request).then(function(response) {
-        var clone = response.clone();
-        caches.open(CACHE_NAME).then(function(cache) { cache.put(request, clone); });
+        if (response && response.ok) {
+          var clone = response.clone();
+          event.waitUntil(
+            caches.open(CACHE_NAME).then(function(cache) { return cache.put(request, clone); })
+          );
+        }
         return response;
       }).catch(function() {
         return caches.match(request).then(function(cached) {
