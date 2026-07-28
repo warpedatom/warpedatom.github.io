@@ -3,6 +3,8 @@ layout: post
 title: "Kerberos delegation abuse: unconstrained, constrained, RBCD"
 date: 2026-06-24
 tags: [kerberos, active-directory]
+description: "How the three Kerberos delegation types - unconstrained, constrained, and resource-based - are abused for privilege escalation and lateral movement in Active Directory."
+series: kerberos
 ---
 
 Delegation exists so a front-end service can act on a user's behalf against a

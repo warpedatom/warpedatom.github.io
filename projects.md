@@ -3,6 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: "Open-source defensive security tooling - OffsetInspect and OffsetScan."
+last_modified_at: 2026-07-28
 ---
 
 # Projects

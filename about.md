@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 description: "Velkris - cybersecurity practitioner and red team operator."
+last_modified_at: 2026-07-27
 ---
 
 # About

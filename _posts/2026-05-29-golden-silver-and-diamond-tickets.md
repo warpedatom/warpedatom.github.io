@@ -3,6 +3,8 @@ layout: post
 title: "Golden, silver, and diamond tickets"
 date: 2026-05-29
 tags: [kerberos, active-directory]
+description: "How Kerberos ticket forgery works at the cryptographic level - golden TGTs, silver service tickets, and diamond ticket modifications that outlast every credential reset."
+series: kerberos
 ---
 
 Ticket forgery is what makes Kerberos persistence so hard to shake. Once an

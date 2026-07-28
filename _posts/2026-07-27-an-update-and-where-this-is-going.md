@@ -3,6 +3,7 @@ layout: post
 title: "An update, and where this is going"
 date: 2026-07-27
 tags: [meta]
+description: "A brief note on how VELKRIS shifted from certification notes to original write-ups on offensive mechanisms - and what's coming next."
 ---
 
 When I started this site last October, the plan was to post lab notes and track

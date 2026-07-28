@@ -3,12 +3,30 @@ layout: default
 ---
 <article class="doc post">
   <h1>{{ page.title }}</h1>
-  <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
+  <p class="post-date">
+    {{ page.date | date: "%B %-d, %Y" }}
+    <span class="read-time">&middot; {% assign wc = content | number_of_words %}{% assign rt = wc | divided_by: 200 %}{% if rt < 1 %}1{% else %}{{ rt }}{% endif %} min read</span>
+  </p>
   {{ content }}
   {% if page.tags %}
   <p class="post-tags">
     {% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}
   </p>
+  {% endif %}
+  {% if page.series %}
+  {% assign series_posts = site.posts | where: "series", page.series | sort: "date" %}
+  {% if series_posts.size > 1 %}
+  <nav class="series-nav" aria-label="Series navigation">
+    <span class="series-label">Series: {{ page.series | replace: "-", " " | capitalize }}</span>
+    <ol class="series-list">
+      {% for sp in series_posts %}
+      <li{% if sp.url == page.url %} class="series-current" aria-current="page"{% endif %}>
+        {% if sp.url == page.url %}<span>{{ sp.title }}</span>{% else %}<a href="{{ sp.url | relative_url }}">{{ sp.title }}</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </nav>
+  {% endif %}
   {% endif %}
 </article>
 <p class="backlink"><a href="{{ '/' | relative_url }}">&larr; Back to writing</a></p>
