@@ -59,7 +59,7 @@
     </div>
   </footer>
   <a href="#" class="back-to-top" aria-label="Back to top">&uarr;</a>
-  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js');}</script>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}');}</script>
   <script>document.querySelectorAll('.content img').forEach(function(img){img.setAttribute('loading','lazy');});</script>
   <script>
   // Back-to-top visibility
