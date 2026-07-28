@@ -5,7 +5,7 @@ layout: default
   <h1>{{ page.title }}</h1>
   <p class="post-date">
     {{ page.date | date: "%B %-d, %Y" }}
-    <span class="read-time">&middot; {% assign wc = content | number_of_words %}{% assign rt = wc | divided_by: 200 %}{% if rt < 1 %}1{% else %}{{ rt }}{% endif %} min read</span>
+    <span class="read-time">&middot; {% assign wc = content | number_of_words %}{% assign rt = wc | divided_by: 240 %}{% if rt < 1 %}1{% else %}{{ rt }}{% endif %} min read</span>
   </p>
   {{ content }}
   {% if page.tags %}
