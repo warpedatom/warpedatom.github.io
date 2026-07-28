@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
@@ -27,6 +29,9 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+
+      - name: Build Pagefind search index
+        run: npx --yes pagefind@1.1.1 --site _site
 
       - name: Ruby dependency audit
         run: |
@@ -50,3 +55,14 @@ jobs:
             --allow-missing-href \
             --checks "Links,Images,Scripts,OpenGraph" \
             --disable-external
+
+      - name: Vale prose lint
+        uses: errata-ai/vale-action@v2
+        # TODO: pin to a SHA for supply-chain safety, e.g.:
+        #   uses: errata-ai/vale-action@ede02fe6e8d8e47ced5afe00e9a6f86aed44a97f
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: _posts
+          version: "3.9.4"
+          fail_on_error: false
