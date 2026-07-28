@@ -3,7 +3,7 @@ layout: default
 description: "Offensive security research, red team notes, and malware analysis by Velkris."
 ---
 
-<p class="lead">I'm <strong>Velkris</strong> — a cybersecurity practitioner and
+<p class="lead">I'm <strong>Velkris</strong> - a cybersecurity practitioner and
 red team operator. Field notes on offensive tooling, malware internals, and
 adversary tradecraft.</p>
 

@@ -1,7 +1,7 @@
 # velkris.red
 
 Source for **[velkris.red](https://velkris.red)** (also served at
-[warpedatom.github.io](https://warpedatom.github.io)) — *offensive security
+[warpedatom.github.io](https://warpedatom.github.io)) - *offensive security
 research, red team notes, and malware analysis* by Velkris.
 
 Built with [Jekyll](https://jekyllrb.com/) 4 and a custom dark theme, deployed

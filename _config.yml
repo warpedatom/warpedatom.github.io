@@ -2,7 +2,7 @@ title: "VELKRIS"
 description: "Offensive security research, red team notes, and malware analysis."
 author: "Velkris"
 
-# Production URL (user site — baseurl stays empty)
+# Production URL (user site - baseurl stays empty)
 url: "https://warpedatom.github.io"
 baseurl: ""
 

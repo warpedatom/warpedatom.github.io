@@ -1,5 +1,5 @@
 /* ============================================================
-   velkris — grimdark offensive-security blog
+   velkris - grimdark offensive-security blog
    Deep black, crimson signal, filmic grain. No external assets.
    ============================================================ */
 
@@ -59,7 +59,7 @@ body {
   background-size: 140px 140px;
 }
 
-/* digitized revenant skull watermark — sits behind content */
+/* digitized revenant skull watermark - sits behind content */
 .fx-skull {
   position: fixed; z-index: 0; pointer-events: none;
   top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -208,7 +208,7 @@ blockquote {
 .foot-sep { margin: 0 0.55rem; color: var(--red-deep); }
 .foot-dim { color: #4a4a52; }
 
-/* ---- Rouge syntax highlighting — red-tinted mono theme --- */
+/* ---- Rouge syntax highlighting - red-tinted mono theme --- */
 .highlight, .highlight pre { background: #0b0b0f; }
 .highlight { border-radius: 4px; }
 .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cd {
