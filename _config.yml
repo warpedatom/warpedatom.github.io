@@ -1,7 +1,33 @@
-title: "Velkris Blog"
-description: "Cybersecurity | Red Team | Research"
+title: "VELKRIS"
+description: "Offensive security research, red team notes, and malware analysis."
 author: "Velkris"
-theme: jekyll-theme-hacker
-show_downloads: false
-github:
-  is_project_page: false
+
+# Production URL (user site — baseurl stays empty)
+url: "https://warpedatom.github.io"
+baseurl: ""
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Give every post the theme's layout automatically
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: default
+
+# Keep build-only files out of the published site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - README.md

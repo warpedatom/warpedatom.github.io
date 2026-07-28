@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080a">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="fx-topline" aria-hidden="true"></div>
+  <div class="fx-skull" aria-hidden="true"></div>
+  <div class="fx-grain" aria-hidden="true"></div>
+  <div class="fx-vignette" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <div class="masthead">
+        <a class="brand" href="{{ '/' | relative_url }}">
+          <span class="brand-mark" aria-hidden="true"></span><span class="brand-name">VELKRIS</span>
+        </a>
+        <nav class="nav">
+          <a href="{{ '/' | relative_url }}">Writing</a>
+          <a href="{{ '/projects/' | relative_url }}">Projects</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="https://github.com/{{ site.github_username | default: 'warpedatom' }}">GitHub</a>
+          <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </nav>
+      </div>
+      <p class="tagline">{{ site.description }}</p>
+    </div>
+  </header>
+
+  <main class="wrap content">
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>{{ site.author }}</span>
+      <span class="foot-sep">/</span>
+      <a href="https://github.com/{{ site.github_username | default: 'warpedatom' }}">github.com/warpedatom</a>
+      <span class="foot-sep">/</span>
+      <span class="foot-dim">&copy; {{ 'now' | date: "%Y" }}</span>
+    </div>
+  </footer>
+</body>
+</html>

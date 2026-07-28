@@ -1,15 +1,21 @@
 ---
 layout: default
-title: "Home"
+description: "Offensive security research, red team notes, and malware analysis by Velkris."
 ---
 
-# Welcome to Velkris Blog
+<p class="lead">I'm <strong>Velkris</strong> — a cybersecurity practitioner and
+red team operator. Field notes on offensive tooling, malware internals, and
+adversary tradecraft.</p>
 
-Hello, I'm **Velkris** — cybersecurity practitioner and red teamer.
+## Writing
 
-Here you'll find:
-- Notes and walkthroughs from my labs
-- Writeups on tools, techniques, and training
-- Research and projects in offensive security
-
-Stay tuned for updates.
+<ul class="post-list">
+{% for post in site.posts %}
+  <li>
+    <span class="stamp">{{ post.date | date: "%Y-%m-%d" }}</span>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+{% else %}
+  <li>No posts yet.</li>
+{% endfor %}
+</ul>
