@@ -1,0 +1,9 @@
+# Turn off the "blank issue" escape hatch so people pick a template
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question / discuss
+    url: https://github.com/warpedatom/warpedatom.github.io/discussions
+    about: Use Discussions for questions, topic ideas, and general conversation.
+  - name: Security issue in a tool
+    url: https://github.com/warpedatom/OffsetInspect/blob/main/SECURITY.md
+    about: Report tool vulnerabilities privately — never in a public issue.

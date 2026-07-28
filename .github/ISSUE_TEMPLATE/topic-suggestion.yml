@@ -1,0 +1,24 @@
+name: Post idea / topic request
+description: Suggest a technique or mechanism you'd like a write-up on.
+title: "[topic]: "
+labels: ["topic-idea"]
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      placeholder: e.g. "AD CS ESC1 in plain terms"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What should it cover?
+      description: The angle you're after — how it works, detection, mitigation, tooling.
+    validations:
+      required: true
+  - type: input
+    id: refs
+    attributes:
+      label: Public references (optional)
+      description: MITRE ATT&CK IDs, vendor research, specs.
