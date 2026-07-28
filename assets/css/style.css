@@ -328,4 +328,87 @@ blockquote {
   .brand-name { font-size: 1.3rem; }
   .content { padding-top: 2.2rem; }
   .post-list li { flex-direction: column; gap: 0.15rem; }
+  .post-nav { flex-direction: column; }
+  .post-nav-link { text-align: left; }
+  .toc { position: static; max-width: 100%; }
 }
+
+/* ---- reading progress bar ------------------------------- */
+.reading-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 102;
+  pointer-events: none;
+}
+.reading-progress-bar {
+  height: 100%; width: 0;
+  background: var(--red-hot);
+  box-shadow: 0 0 8px var(--red-glow);
+  transition: width 0.1s linear;
+}
+
+/* ---- table of contents ---------------------------------- */
+.toc {
+  margin: 0 0 2.2rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line-lit); border-left: 3px solid var(--red-deep);
+  background: var(--bg-elev); border-radius: 4px;
+}
+.toc-label {
+  display: block; font-family: var(--mono); font-size: 0.76rem;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--ink-dim); margin-bottom: 0.5rem;
+}
+.toc ul { margin: 0; padding-left: 1.2rem; list-style: none; }
+.toc li { margin: 0.25rem 0; font-family: var(--mono); font-size: 0.82rem; }
+.toc li::before { content: "\203A"; color: var(--red); margin-right: 0.4rem; }
+.toc a { color: var(--ink); border-bottom: none; text-decoration: none; }
+.toc a:hover { color: var(--red-hot); }
+
+/* ---- copy button on code blocks ------------------------- */
+.copy-btn {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  background: var(--bg-elev); color: var(--ink-dim);
+  border: 1px solid var(--line-lit); border-radius: 3px;
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.04em;
+  padding: 0.2rem 0.5rem; cursor: pointer;
+  opacity: 0; transition: opacity 0.15s, color 0.15s, border-color 0.15s;
+}
+pre:hover .copy-btn { opacity: 1; }
+.copy-btn:hover { color: var(--red-hot); border-color: var(--red); }
+
+/* ---- prev/next post navigation -------------------------- */
+.post-nav {
+  display: flex; justify-content: space-between; gap: 1rem;
+  margin: 2.5rem 0 0; padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.post-nav-link {
+  display: flex; flex-direction: column; gap: 0.2rem;
+  text-decoration: none; max-width: 48%; border-bottom: none;
+}
+.post-nav-next { text-align: right; margin-left: auto; }
+.post-nav-dir {
+  font-family: var(--mono); font-size: 0.74rem;
+  color: var(--ink-dim); letter-spacing: 0.06em; text-transform: uppercase;
+}
+.post-nav-title { color: var(--ink-bright); font-size: 0.92rem; }
+.post-nav-link:hover .post-nav-title { color: var(--red-hot); }
+
+/* ---- read-time inline (index listing) ------------------- */
+.read-time-inline {
+  font-family: var(--mono); font-size: 0.72rem; color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+/* ---- search page ---------------------------------------- */
+.search-input {
+  width: 100%; padding: 0.7rem 1rem;
+  background: var(--bg-elev); color: var(--ink-bright);
+  border: 1px solid var(--line-lit); border-radius: 4px;
+  font-family: var(--mono); font-size: 0.9rem;
+  outline: none; transition: border-color 0.15s;
+}
+.search-input:focus { border-color: var(--red); }
+.search-input::placeholder { color: var(--ink-dim); }
+.search-results { margin-top: 1.5rem; }
+.search-results li { margin: 0.8rem 0; }
+.search-results .search-date { font-family: var(--mono); font-size: 0.76rem; color: var(--ink-dim); }

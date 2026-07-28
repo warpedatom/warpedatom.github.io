@@ -1,0 +1,6 @@
+# Drafts
+
+Place work-in-progress posts here without a date prefix.
+Preview locally with `bundle exec jekyll serve --drafts`.
+
+Files in this folder are never published to the live site.

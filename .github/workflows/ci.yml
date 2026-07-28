@@ -1,0 +1,37 @@
+name: CI - Build & Validate
+
+on:
+  pull_request:
+    branches: ["main"]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+        with:
+          ruby-version: "3.4"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check HTML output
+        run: |
+          gem install html-proofer --no-document
+          htmlproofer _site \
+            --ignore-urls "/^https:\/\/x\.com/,/^https:\/\/api\.github\.com/" \
+            --ignore-status-codes "403,429" \
+            --no-enforce-https \
+            --allow-missing-href \
+            --check-html \
+            --disable-external

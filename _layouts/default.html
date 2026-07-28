@@ -11,6 +11,7 @@
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   {% seo %}
   {% feed_meta %}
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://api.github.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% if page.url contains '/projects/' %}
@@ -35,6 +36,7 @@
           <a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags/' %} aria-current="page"{% endif %}>Topics</a>
           <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>
           <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>About</a>
+          <a href="{{ '/search/' | relative_url }}"{% if page.url contains '/search/' %} aria-current="page"{% endif %}>Search</a>
           <a href="https://github.com/{{ site.github_username | default: 'warpedatom' }}">GitHub</a>
           <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         </nav>
@@ -56,5 +58,7 @@
       <span class="foot-dim">&copy; {{ 'now' | date: "%Y" }}</span>
     </div>
   </footer>
+  <script>if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js');}</script>
+  <script>document.querySelectorAll('.content img').forEach(function(img){img.setAttribute('loading','lazy');});</script>
 </body>
 </html>
