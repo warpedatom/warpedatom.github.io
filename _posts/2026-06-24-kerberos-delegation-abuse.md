@@ -2,6 +2,7 @@
 layout: post
 title: "Kerberos delegation abuse: unconstrained, constrained, RBCD"
 date: 2026-06-24
+tags: [kerberos, active-directory]
 ---
 
 Delegation exists so a front-end service can act on a user's behalf against a

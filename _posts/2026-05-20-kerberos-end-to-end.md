@@ -2,6 +2,7 @@
 layout: post
 title: "Kerberos, end to end"
 date: 2026-05-20
+tags: [kerberos, active-directory]
 ---
 
 Almost every Active Directory attack worth knowing rides on Kerberos, so it pays

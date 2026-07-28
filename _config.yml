@@ -1,10 +1,15 @@
 title: "VELKRIS"
-description: "Offensive security research, red team notes, and malware analysis."
+description: "Red team tradecraft, malware analysis, and evasion research."
 author: "Velkris"
 
-# Production URL (user site - baseurl stays empty)
-url: "https://warpedatom.github.io"
+# Production URL (custom domain - canonical for SEO and social cards)
+url: "https://velkris.red"
 baseurl: ""
+
+# Social / SEO (jekyll-seo-tag)
+twitter:
+  username: warped_atom
+  card: summary_large_image
 
 # Build
 markdown: kramdown
@@ -16,13 +21,21 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Give every post the theme's layout automatically
+# Defaults
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og.png     # default social-share card
   - scope:
       path: ""
       type: posts
     values:
-      layout: default
+      layout: post
+
+# Publish the .well-known folder (Jekyll skips dot-folders by default)
+include:
+  - .well-known
 
 # Keep build-only files out of the published site
 exclude:

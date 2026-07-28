@@ -2,6 +2,7 @@
 layout: post
 title: "An update, and where this is going"
 date: 2026-07-27
+tags: [meta]
 ---
 
 When I started this site last October, the plan was to post lab notes and track

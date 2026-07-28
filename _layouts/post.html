@@ -5,5 +5,10 @@ layout: default
   <h1>{{ page.title }}</h1>
   <p class="post-date">{{ page.date | date: "%B %-d, %Y" }}</p>
   {{ content }}
+  {% if page.tags %}
+  <p class="post-tags">
+    {% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">#{{ t }}</a>{% endfor %}
+  </p>
+  {% endif %}
 </article>
 <p class="backlink"><a href="{{ '/' | relative_url }}">&larr; Back to writing</a></p>

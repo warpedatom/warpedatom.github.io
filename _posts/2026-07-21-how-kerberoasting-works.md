@@ -2,6 +2,7 @@
 layout: post
 title: "How Kerberoasting works"
 date: 2026-07-21
+tags: [kerberos, active-directory]
 ---
 
 Kerberoasting (MITRE ATT&CK **T1558.003**) is one of those techniques that

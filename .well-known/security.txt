@@ -1,0 +1,7 @@
+# Security contact for velkris.red and my open-source tooling.
+Contact: https://github.com/warpedatom/OffsetInspect/security/advisories/new
+Contact: mailto:security@velkris.red
+Expires: 2027-07-28T00:00:00Z
+Preferred-Languages: en
+Canonical: https://velkris.red/.well-known/security.txt
+Policy: https://github.com/warpedatom/OffsetInspect/blob/main/SECURITY.md

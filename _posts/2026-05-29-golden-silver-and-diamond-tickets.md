@@ -2,6 +2,7 @@
 layout: post
 title: "Golden, silver, and diamond tickets"
 date: 2026-05-29
+tags: [kerberos, active-directory]
 ---
 
 Ticket forgery is what makes Kerberos persistence so hard to shake. Once an

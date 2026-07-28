@@ -2,6 +2,7 @@
 layout: post
 title: "Reading entropy to spot packed code"
 date: 2026-07-03
+tags: [malware-analysis]
 ---
 
 Shannon entropy measures how unpredictable a byte stream is, on a scale of 0 to

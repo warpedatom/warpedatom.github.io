@@ -2,6 +2,7 @@
 layout: post
 title: "Domain dominance: persistence after Domain Admin"
 date: 2026-07-09
+tags: [active-directory, persistence]
 ---
 
 Reaching Domain Admin is a milestone, not the finish line. **Domain dominance**

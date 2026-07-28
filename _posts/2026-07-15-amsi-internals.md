@@ -2,6 +2,7 @@
 layout: post
 title: "AMSI internals: where the scan actually happens"
 date: 2026-07-15
+tags: [detection, evasion]
 ---
 
 The Antimalware Scan Interface is the reason a malicious script often gets caught
