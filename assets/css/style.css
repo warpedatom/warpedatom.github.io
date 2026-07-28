@@ -244,6 +244,22 @@ blockquote {
 .highlight .gd { color: #e5555d; }                      /* diff delete */
 .highlight .err { color: #ff5a5a; background: rgba(229,29,42,0.12); }
 
+/* ---- GitHub stats badges -------------------------------- */
+.gh-stats {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin: 0.9rem 0 1.6rem;
+  font-family: var(--mono); font-size: 0.76rem;
+  min-height: 1.4em; /* prevent layout shift while loading */
+}
+.gh-badge {
+  display: inline-flex; align-items: center;
+  padding: 0.18rem 0.55rem;
+  border: 1px solid var(--line-lit); border-radius: 3px;
+  color: var(--ink-dim); background: var(--bg-elev);
+  letter-spacing: 0.03em; white-space: nowrap;
+}
+.gh-badge-rel { color: var(--red-hot); border-color: var(--red-deep); background: rgba(92,11,17,0.18); }
+
 /* ---- responsive ----------------------------------------- */
 @media (max-width: 600px) {
   .fx-skull { opacity: 0.1; }
