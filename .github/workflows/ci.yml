@@ -34,7 +34,7 @@ jobs:
           bundler-audit check --update
 
       - name: Lighthouse CI
-        uses: treosh/lighthouse-ci-action@6f56a7391f4c88179336213e9e0ddf4dd3856ccb # v12
+        uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
