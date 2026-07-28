@@ -10,10 +10,10 @@
   <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
   {% seo %}
   {% feed_meta %}
-  <link rel="preconnect" href="https://api.github.com">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="fx-topline" aria-hidden="true"></div>
   <div class="fx-skull" aria-hidden="true"></div>
   <div class="fx-grain" aria-hidden="true"></div>
@@ -25,11 +25,11 @@
         <a class="brand" href="{{ '/' | relative_url }}">
           <span class="brand-mark" aria-hidden="true"></span><span class="brand-name">VELKRIS</span>
         </a>
-        <nav class="nav">
-          <a href="{{ '/' | relative_url }}">Writing</a>
-          <a href="{{ '/tags/' | relative_url }}">Topics</a>
-          <a href="{{ '/projects/' | relative_url }}">Projects</a>
-          <a href="{{ '/about/' | relative_url }}">About</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="{{ '/' | relative_url }}"{% if page.url == '/' or page.url contains '/posts/' %} aria-current="page"{% endif %}>Writing</a>
+          <a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags/' %} aria-current="page"{% endif %}>Topics</a>
+          <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>
+          <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>About</a>
           <a href="https://github.com/{{ site.github_username | default: 'warpedatom' }}">GitHub</a>
           <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         </nav>
@@ -38,7 +38,7 @@
     </div>
   </header>
 
-  <main class="wrap content">
+  <main id="main-content" class="wrap content">
     {{ content }}
   </main>
 
