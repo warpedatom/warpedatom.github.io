@@ -68,15 +68,19 @@ self.addEventListener('activate', function (event) {
 
 function staleWhileRevalidate(event, request, cacheName, maxEntries) {
   event.respondWith(
-    caches.match(request).then(function (cached) {
-      var networkFetch = fetch(request)
-        .then(function (response) {
-          event.waitUntil(putIfCacheable(cacheName, request, response, maxEntries));
-          return response;
-        })
-        .catch(function () { return cached || caches.match(OFFLINE_URL); });
+    caches.open(cacheName).then(function (cache) {
+      return cache.match(request).then(function (cached) {
+        var networkFetch = fetch(request)
+          .then(function (response) {
+            event.waitUntil(putIfCacheable(cacheName, request, response, maxEntries));
+            return response;
+          })
+          .catch(function () {
+            return cached || caches.match(OFFLINE_URL);
+          });
 
-      return cached || networkFetch;
+        return cached || networkFetch;
+      });
     })
   );
 }
