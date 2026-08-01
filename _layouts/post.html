@@ -89,21 +89,13 @@ layout: default
 
 <p class="backlink"><a href="{{ '/' | relative_url }}">&larr; Back to writing</a></p>
 
-<!--
-  Giscus comments — GitHub Discussions-backed, zero tracking.
-
-  Setup (one-time):
-  1. Enable Discussions on this repo (Settings → General → Discussions).
-  2. Install the Giscus GitHub App: https://github.com/apps/giscus
-  3. Go to https://giscus.app, configure your repo, and copy the generated values.
-  4. Replace the placeholder attribute values below, then remove these comment tags.
-
+{% if site.giscus.repo_id %}
 <section class="giscus-section" aria-label="Comments">
   <script src="https://giscus.app/client.js"
-    data-repo="warpedatom/warpedatom.github.io"
-    data-repo-id="YOUR_REPO_ID"
-    data-category="General"
-    data-category-id="YOUR_CATEGORY_ID"
+    data-repo="{{ site.giscus.repo }}"
+    data-repo-id="{{ site.giscus.repo_id }}"
+    data-category="{{ site.giscus.category }}"
+    data-category-id="{{ site.giscus.category_id }}"
     data-mapping="pathname"
     data-strict="1"
     data-reactions-enabled="1"
@@ -116,5 +108,5 @@ layout: default
     async>
   </script>
 </section>
--->
+{% endif %}
 

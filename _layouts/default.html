@@ -71,13 +71,9 @@
   {% if page.url contains '/projects/' %}
   <script src="{{ '/assets/js/projects.js' | relative_url }}" defer></script>
   {% endif %}
-  <!--
-    GoatCounter analytics — privacy-first, no cookies.
-    To activate: create a free account at https://www.goatcounter.com,
-    then replace YOURCODE below with your site code.
-
-  <script data-goatcounter="https://YOURCODE.goatcounter.com/count"
+  {% if site.goatcounter_code %}
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
           async src="//gc.zgo.at/count.js"></script>
-  -->
+  {% endif %}
 </body>
 </html>

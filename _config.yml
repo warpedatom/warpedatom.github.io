@@ -13,6 +13,18 @@ twitter:
   username: warped_atom
   card: summary_large_image
 
+# Analytics — GoatCounter (privacy-first, no cookies)
+# Create a free account at https://www.goatcounter.com then put your code here.
+goatcounter_code: velkris
+
+# Comments — Giscus (GitHub Discussions-backed, zero tracking)
+# Requires the Giscus app installed: https://github.com/apps/giscus
+giscus:
+  repo: "warpedatom/warpedatom.github.io"
+  repo_id: "R_kgDOQL1nvw"
+  category: "General"
+  category_id: "DIC_kwDOQL1nv84DCHgs"
+
 # Build
 markdown: kramdown
 kramdown:
