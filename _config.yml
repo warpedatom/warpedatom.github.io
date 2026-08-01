@@ -29,6 +29,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-last-modified-at
+  - jekyll-redirect-from
 
 # Defaults
 defaults:

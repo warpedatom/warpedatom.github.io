@@ -1,0 +1,19 @@
+/* TEAM */
+Author: Velkris
+Site: https://velkris.red
+GitHub: https://github.com/warpedatom
+Twitter: @warped_atom
+
+/* SITE */
+Generator: Jekyll 4.4
+Hosting: GitHub Pages
+Search: Pagefind
+Analytics: GoatCounter (privacy-first)
+Comments: Giscus (GitHub Discussions)
+CSS: Custom (hand-rolled)
+Standards: HTML5, CSS3, ES6
+
+/* THANKS */
+Jekyll — https://jekyllrb.com
+Pagefind — https://pagefind.app
+Rouge — https://github.com/rouge-ruby/rouge

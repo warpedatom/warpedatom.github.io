@@ -11,6 +11,7 @@
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   {% seo %}
   {% feed_meta %}
+  <link rel="author" href="{{ '/humans.txt' | relative_url }}" type="text/plain">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://gc.zgo.at; font-src 'self'; frame-src https://giscus.app; object-src 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
@@ -35,6 +36,7 @@
           <a href="{{ '/' | relative_url }}"{% if page.url == '/' or page.url contains '/posts/' %} aria-current="page"{% endif %}>Writing</a>
           <a href="{{ '/tags/' | relative_url }}"{% if page.url contains '/tags/' %} aria-current="page"{% endif %}>Topics</a>
           <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>
+          <a href="{{ '/resources/' | relative_url }}"{% if page.url contains '/resources/' %} aria-current="page"{% endif %}>Resources</a>
           <a href="{{ '/about/' | relative_url }}"{% if page.url contains '/about/' %} aria-current="page"{% endif %}>About</a>
           <a href="{{ '/search/' | relative_url }}"{% if page.url contains '/search/' %} aria-current="page"{% endif %}>Search</a>
           <a href="https://github.com/{{ site.github_username | default: 'warpedatom' }}">GitHub</a>
