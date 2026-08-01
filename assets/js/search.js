@@ -64,10 +64,9 @@
     return snippet;
   }
 
-  // Safely parse a Pagefind excerpt (text + <mark> highlights only — no innerHTML)
+  // Safely parse a Pagefind excerpt (text + <mark> highlights only)
   function parseExcerpt(html) {
     var frag = document.createDocumentFragment();
-    var tmp = document.createElement('div');
     // Split on <mark>...</mark>; works for Pagefind's simple highlight markup
     var parts = String(html || '').split(/(<mark[^>]*>[\s\S]*?<\/mark>)/i);
     parts.forEach(function (part) {
@@ -78,8 +77,9 @@
         frag.appendChild(mark);
       } else {
         // Unescape HTML entities (e.g. &amp; &lt;) present in plain-text segments
-        tmp.innerHTML = part;
-        frag.appendChild(document.createTextNode(tmp.textContent));
+        // DOMParser is safe: it never executes scripts when parsing 'text/html'
+        var doc = (new DOMParser()).parseFromString(part, 'text/html');
+        frag.appendChild(document.createTextNode(doc.body ? doc.body.textContent : part));
       }
     });
     return frag;
