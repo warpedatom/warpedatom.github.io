@@ -11,7 +11,7 @@
   <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
   {% seo %}
   {% feed_meta %}
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://gc.zgo.at; font-src 'self'; frame-src https://giscus.app; object-src 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% if page.url contains '/projects/' %}
@@ -25,7 +25,7 @@
   <div class="fx-grain" aria-hidden="true"></div>
   <div class="fx-vignette" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header class="site-header" data-pagefind-ignore>
     <div class="wrap">
       <div class="masthead">
         <a class="brand" href="{{ '/' | relative_url }}">
@@ -45,11 +45,11 @@
     </div>
   </header>
 
-  <main id="main-content" class="wrap content">
+  <main id="main-content" class="wrap content" data-pagefind-body>
     {{ content }}
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-pagefind-ignore>
     <div class="wrap">
       <span>{{ site.author }}</span>
       <span class="foot-sep">/</span>
@@ -69,5 +69,13 @@
   {% if page.url contains '/projects/' %}
   <script src="{{ '/assets/js/projects.js' | relative_url }}" defer></script>
   {% endif %}
+  <!--
+    GoatCounter analytics — privacy-first, no cookies.
+    To activate: create a free account at https://www.goatcounter.com,
+    then replace YOURCODE below with your site code.
+
+  <script data-goatcounter="https://YOURCODE.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  -->
 </body>
 </html>

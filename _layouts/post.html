@@ -22,10 +22,11 @@ layout: default
 <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar"></div></div>
 
 <article class="doc post">
-  <h1>{{ page.title }}</h1>
+  <h1 data-pagefind-meta="title">{{ page.title }}</h1>
   <p class="post-date">
     {{ page.date | date: "%B %-d, %Y" }}
     <span class="read-time">&middot; {{ rt }} min read</span>
+    <span hidden data-pagefind-meta="date">{{ page.date | date: "%Y-%m-%d" }}</span>
   </p>
 
   {% if wc > 800 %}
@@ -87,3 +88,33 @@ layout: default
 </nav>
 
 <p class="backlink"><a href="{{ '/' | relative_url }}">&larr; Back to writing</a></p>
+
+<!--
+  Giscus comments — GitHub Discussions-backed, zero tracking.
+
+  Setup (one-time):
+  1. Enable Discussions on this repo (Settings → General → Discussions).
+  2. Install the Giscus GitHub App: https://github.com/apps/giscus
+  3. Go to https://giscus.app, configure your repo, and copy the generated values.
+  4. Replace the placeholder attribute values below, then remove these comment tags.
+
+<section class="giscus-section" aria-label="Comments">
+  <script src="https://giscus.app/client.js"
+    data-repo="warpedatom/warpedatom.github.io"
+    data-repo-id="YOUR_REPO_ID"
+    data-category="General"
+    data-category-id="YOUR_CATEGORY_ID"
+    data-mapping="pathname"
+    data-strict="1"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="dark"
+    data-lang="en"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</section>
+-->
+
