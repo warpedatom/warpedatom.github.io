@@ -29,7 +29,7 @@ A curated collection of tools, references, and reading material for red team ope
 
 | Tool | Purpose |
 |------|---------|
-| [OffsetInspect](https://github.com/warpedatom/OffsetInspect) | PowerShell toolkit for detection-boundary and static analysis |
+| [OffsetInspect](https://github.com/warpedatom/OffsetInspect) | PowerShell toolkit for detection boundary and static analysis |
 | [YARA](https://virustotal.github.io/yara/) | Pattern matching for malware classification |
 | [Sigma](https://github.com/SigmaHQ/sigma) | Generic signature format for SIEM systems |
 | [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) | Windows system monitoring and logging |
