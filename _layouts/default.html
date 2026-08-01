@@ -12,7 +12,7 @@
   {% seo %}
   {% feed_meta %}
   <link rel="author" href="{{ '/humans.txt' | relative_url }}" type="text/plain">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://gc.zgo.at; font-src 'self'; frame-src https://giscus.app; object-src 'none'; base-uri 'self'; form-action 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at https://giscus.app; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://api.github.com https://gc.zgo.at https://*.goatcounter.com; font-src 'self'; frame-src https://giscus.app; object-src 'none'; base-uri 'self'; form-action 'self';">
   <link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {% if page.url contains '/projects/' %}
@@ -73,7 +73,7 @@
   {% endif %}
   {% if site.goatcounter_code %}
   <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
-          async src="//gc.zgo.at/count.js"></script>
+          async src="https://gc.zgo.at/count.js"></script>
   {% endif %}
 </body>
 </html>
