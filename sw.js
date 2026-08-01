@@ -3,19 +3,21 @@ layout: null
 sitemap: false
 ---
 // Service Worker - stale-while-revalidate with bounded runtime caches
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3';
 const STATIC_CACHE = 'velkris-static-' + CACHE_VERSION;
 const PAGE_CACHE = 'velkris-pages-' + CACHE_VERSION;
 const ASSET_CACHE = 'velkris-assets-' + CACHE_VERSION;
-const OFFLINE_URL = '/';
+const OFFLINE_URL = '/offline/';
 const MAX_PAGE_ENTRIES = 60;
 const MAX_ASSET_ENTRIES = 160;
 const PRECACHE_URLS = [
   '/',
+  '/offline/',
   '/assets/css/style.css',
   '/assets/js/main.js',
   '/about/',
   '/projects/',
+  '/resources/',
   '/tags/',
   '/search/',
   '/search.json'
