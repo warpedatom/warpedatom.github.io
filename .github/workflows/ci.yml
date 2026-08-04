@@ -57,7 +57,7 @@ jobs:
             --disable-external
 
       - name: Vale prose lint
-        uses: errata-ai/vale-action@v2
+        uses: errata-ai/vale-action@v2.1.2
         # TODO: pin to a SHA for supply-chain safety, e.g.:
         #   uses: errata-ai/vale-action@ede02fe6e8d8e47ced5afe00e9a6f86aed44a97f
         env:
