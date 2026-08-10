@@ -2,15 +2,18 @@
 layout: page
 title: Projects
 permalink: /projects/
-description: "Open-source defensive security tooling - OffsetInspect and OffsetScan."
-last_modified_at: 2026-07-28
+description: "Open-source security tooling - OffsetInspect, OffsetScan, NoiseHound, and DeadAir."
+last_modified_at: 2026-08-10
 ---
 
 # Projects
 
-Open-source tooling I build for detection engineering and malware triage. Both
-are read-only by design - they analyze binaries and detection behavior without
-ever disabling or reconfiguring endpoint protection.
+Open-source tooling I build for detection engineering, malware triage, and
+detection-aware offense. Two pairings, each a front-end plus a native Rust
+engine: **OffsetInspect / OffsetScan** for detection-boundary and binary analysis
+(read-only - they never disable or reconfigure endpoint protection), and
+**NoiseHound / DeadAir** for scoring BloodHound attack paths by how detectable
+they are.
 
 ## OffsetInspect
 
@@ -49,3 +52,35 @@ streaming, or flat CSV for a SIEM.
 - [github.com/warpedatom/OffsetScan](https://github.com/warpedatom/OffsetScan)
 
 <div class="gh-stats" data-repo="warpedatom/OffsetScan" aria-label="Live GitHub stats for OffsetScan"></div>
+
+## NoiseHound
+
+Detection-aware attack-path scoring on top of **BloodHound**. Given a source and
+an objective (say, Domain Admins), it ranks the available paths by how *loud*
+they are - so an operator can take the quietest route, not just the shortest.
+
+Every attack-path edge is scored across audit, EDR, and open-SIEM tiers from a
+lab-measured calibration - 30 corpus edges measured against real Windows,
+Defender, and Elastic telemetry, shipped as three profiles. It loads BloodHound
+CE exports or a live Neo4j graph, and can write the noise scores back onto the
+graph for BloodHound-native quietest-path queries.
+
+- Two-tier engine - Python for flexibility, the native DeadAir core for scale - with identical, validated results
+- Loads BloodHound CE zips, JSON, a directory, or a live `bolt://` Neo4j graph
+- `pip install noisehound`
+- [github.com/warpedatom/NoiseHound](https://github.com/warpedatom/NoiseHound)
+
+<div class="gh-stats" data-repo="warpedatom/NoiseHound" aria-label="Live GitHub stats for NoiseHound"></div>
+
+## DeadAir
+
+The native **Rust** engine core for NoiseHound - fast, noise-weighted attack-path
+solving over the same corpus. It mirrors NoiseHound's scoring so the two are
+interchangeable, and its regression tests are pinned to the measured profiles for
+cross-engine parity.
+
+- Noise-weighted shortest / K-shortest path solving weighted by measured edge detectability
+- `cargo install deadair`
+- [github.com/warpedatom/DeadAir](https://github.com/warpedatom/DeadAir)
+
+<div class="gh-stats" data-repo="warpedatom/DeadAir" aria-label="Live GitHub stats for DeadAir"></div>
