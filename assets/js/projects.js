@@ -34,17 +34,30 @@
 
   document.querySelectorAll('.gh-stats[data-repo]').forEach(function (el) {
     var repo = el.dataset.repo;
+    var state = {};
+
+    // Two async calls (repo + latest release) race; render in a fixed
+    // order regardless of which resolves first, so all widgets match.
+    function render() {
+      el.textContent = '';
+      if (state.stars != null) el.appendChild(badge('\u2605 ' + state.stars.toLocaleString()));
+      if (state.forks) el.appendChild(badge('\u2387 ' + state.forks.toLocaleString()));
+      if (state.language) el.appendChild(badge(state.language));
+      if (state.rel) el.appendChild(badge(state.rel, 'gh-badge-rel'));
+    }
 
     cached('https://api.github.com/repos/' + repo, 'gh_repo_' + repo, function (d) {
       if (!d) return;
-      el.appendChild(badge('\u2605 ' + d.stargazers_count.toLocaleString()));
-      if (d.forks_count) el.appendChild(badge('\u2387 ' + d.forks_count.toLocaleString()));
-      if (d.language) el.appendChild(badge(d.language));
+      state.stars = d.stargazers_count;
+      state.forks = d.forks_count;
+      state.language = d.language;
+      render();
     });
 
     cached('https://api.github.com/repos/' + repo + '/releases/latest', 'gh_rel_' + repo, function (d) {
       if (!d || !d.tag_name) return;
-      el.appendChild(badge(d.tag_name, 'gh-badge-rel'));
+      state.rel = d.tag_name;
+      render();
     });
   });
 })();
