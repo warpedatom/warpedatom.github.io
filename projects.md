@@ -3,7 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 description: "Open-source security tooling - OffsetInspect, OffsetScan, NoiseHound, and DeadAir."
-last_modified_at: 2026-08-10
+last_modified_at: 2026-08-21
 ---
 
 # Projects
@@ -59,11 +59,13 @@ Detection-aware attack-path scoring on top of **BloodHound**. Given a source and
 an objective (say, Domain Admins), it ranks the available paths by how *loud*
 they are - so an operator can take the quietest route, not just the shortest.
 
-Every attack-path edge is scored across audit, EDR, and open-SIEM tiers from a
-lab-measured calibration - 30 corpus edges measured against real Windows,
-Defender, and Elastic telemetry, shipped as three profiles. It loads BloodHound
-CE exports or a live Neo4j graph, and can write the noise scores back onto the
-graph for BloodHound-native quietest-path queries.
+Every attack-path edge is scored from a lab-measured calibration - 37 of 71
+corpus edges measured against real telemetry across five on-prem detection tiers
+(Windows audit, Defender for Endpoint, Elastic SIEM, Defender for Identity, and
+WDAC audit) plus a measured Azure/Entra tier, shipped as six drop-in profiles. It
+loads BloodHound CE exports, a live Neo4j graph, or raw AzureHound output, and can
+write the noise scores back onto the graph for BloodHound-native quietest-path
+queries.
 
 - Two-tier engine - Python for flexibility, the native DeadAir core for scale - with identical, validated results
 - Loads BloodHound CE zips, JSON, a directory, or a live `bolt://` Neo4j graph
