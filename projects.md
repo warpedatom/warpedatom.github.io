@@ -59,7 +59,7 @@ Detection-aware attack-path scoring on top of **BloodHound**. Given a source and
 an objective (say, Domain Admins), it ranks the available paths by how *loud*
 they are - so an operator can take the quietest route, not just the shortest.
 
-Every attack-path edge is scored from a lab-measured calibration - 37 of 71
+Every attack-path edge is scored from a lab-measured calibration - 37 of 77
 corpus edges measured against real telemetry across five on-prem detection tiers
 (Windows audit, Defender for Endpoint, Elastic SIEM, Defender for Identity, and
 WDAC audit) plus a measured Azure/Entra tier, shipped as six drop-in profiles. It
