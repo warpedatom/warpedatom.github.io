@@ -6,7 +6,7 @@ tags: [active-directory, azure, detection]
 description: "NoiseHound 1.1 goes from three measured detection tiers to five - adding Defender for Identity runtime alerts and WDAC - plus the first real measured Azure tier and native AzureHound ingest. Here is what got measured, what got corrected, and how it was validated live."
 ---
 
-When I [introduced NoiseHound](/2026/08/10/introducing-noisehound/) it shipped
+When I [introduced NoiseHound]({% post_url 2026-08-10-introducing-noisehound %}) it shipped
 three lab-measured detection tiers - Windows audit, Defender for Endpoint, and an
 open Elastic SIEM. **1.1** roughly doubles what is actually measured and pushes the
 same "measure, do not guess" discipline into two places it had not reached: the
