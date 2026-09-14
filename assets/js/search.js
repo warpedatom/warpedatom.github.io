@@ -1,4 +1,4 @@
-// Search page — Pagefind API with JSON fallback for local dev
+// Search page - Pagefind API with JSON fallback for local dev
 (function () {
   var MSG_MIN  = 'Type at least 2 characters.';
   var MSG_NONE = 'No results found.';

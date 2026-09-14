@@ -14,7 +14,7 @@ body:
     id: why
     attributes:
       label: What should it cover?
-      description: The angle you're after — how it works, detection, mitigation, tooling.
+      description: The angle you're after - how it works, detection, mitigation, tooling.
     validations:
       required: true
   - type: input

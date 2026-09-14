@@ -14,6 +14,6 @@ CSS: Custom (hand-rolled)
 Standards: HTML5, CSS3, ES6
 
 /* THANKS */
-Jekyll — https://jekyllrb.com
-Pagefind — https://pagefind.app
-Rouge — https://github.com/rouge-ruby/rouge
+Jekyll - https://jekyllrb.com
+Pagefind - https://pagefind.app
+Rouge - https://github.com/rouge-ruby/rouge

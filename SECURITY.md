@@ -5,8 +5,8 @@
 This repository hosts a static Jekyll site (velkris.red) and two companion
 open-source tools:
 
-- **OffsetInspect** — [github.com/warpedatom/OffsetInspect](https://github.com/warpedatom/OffsetInspect)
-- **OffsetScan** — [github.com/warpedatom/OffsetScan](https://github.com/warpedatom/OffsetScan)
+- **OffsetInspect** - [github.com/warpedatom/OffsetInspect](https://github.com/warpedatom/OffsetInspect)
+- **OffsetScan** - [github.com/warpedatom/OffsetScan](https://github.com/warpedatom/OffsetScan)
 
 Security reports for those tools should be filed in their respective
 repositories, not here.

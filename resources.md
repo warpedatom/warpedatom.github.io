@@ -2,7 +2,7 @@
 layout: page
 title: Resources
 permalink: /resources/
-description: "Curated red team, malware analysis, and detection engineering resources — tools, references, and reading lists."
+description: "Curated red team, malware analysis, and detection engineering resources - tools, references, and reading lists."
 last_modified_at: 2026-08-03
 ---
 
@@ -10,7 +10,7 @@ last_modified_at: 2026-08-03
 
 A curated collection of tools, references, and reading material for red team
 operators, malware analysts, and detection engineers. Drawn from tooling I
-actually reach for and research I keep coming back to — maintained as a living
+actually reach for and research I keep coming back to - maintained as a living
 document, weighted toward things that are still maintained and still relevant.
 
 ---
@@ -54,7 +54,7 @@ document, weighted toward things that are still maintained and still relevant.
 | [bloodyAD](https://github.com/CravateRouge/bloodyAD) | AD privilege-escalation framework operating over LDAP |
 | [autobloody](https://github.com/CravateRouge/autobloody) | Auto-exploits privilege-escalation paths surfaced by BloodHound |
 | [Certify](https://github.com/GhostPack/Certify) | AD Certificate Services (AD CS) enumeration and abuse |
-| [Certipy](https://github.com/ly4k/Certipy) | Python AD CS enumeration and abuse; ESC1–ESC16 coverage |
+| [Certipy](https://github.com/ly4k/Certipy) | Python AD CS enumeration and abuse; ESC1-ESC16 coverage |
 | [Rubeus](https://github.com/GhostPack/Rubeus) | C# Kerberos abuse toolkit (roasting, delegation, ticket forgery) |
 | [PKINITtools](https://github.com/dirkjanm/PKINITtools) | Kerberos PKINIT and AD CS relaying utilities |
 | [krbrelayx](https://github.com/dirkjanm/krbrelayx) | Kerberos relaying and unconstrained-delegation abuse |
